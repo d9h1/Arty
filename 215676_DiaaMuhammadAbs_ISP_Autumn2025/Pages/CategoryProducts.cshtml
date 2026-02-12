@@ -1,0 +1,77 @@
+﻿@page "{id:int}"
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.CategoryProductsModel
+@{
+    ViewData["Title"] = Model.Category.Name + " Products";
+}
+
+<div class="container my-5">
+
+    <header class="heading-title">
+        <h1>@Model.Category.Name</h1>
+        <p class="lead">Explore the latest products in the @Model.Category.Name category.</p>
+    </header>
+
+    @if (Model.Products != null && Model.Products.Any())
+    {
+        <div class="item-grid">
+
+            @foreach (var product in Model.Products)
+            {
+                <div class="item">
+                    <div class="item-img">
+
+                        @{
+                            string imagePath = product.ImageUrl;
+                            if (!string.IsNullOrEmpty(imagePath))
+                            {
+                                if (!imagePath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    if (!imagePath.StartsWith("/") && !imagePath.StartsWith("~"))
+                                    {
+                                        imagePath = "~/images/products/" + imagePath;
+                                    }
+                                    imagePath = Url.Content(imagePath);
+                                }
+                            }
+                            else
+                            {
+                                imagePath = Url.Content("~/images/default-product.png");
+                            }
+                        }
+
+                        <a asp-page="./ProductDetails" asp-route-id="@product.Id">
+                            <img src="@imagePath" alt="@product.Name">
+                        </a>
+
+                    </div>
+
+                    <div class="item-details">
+                        <p class="name">@product.Name</p>
+                        <p class="price">@product.Price.ToString("N2") $</p>
+                        <div class="product-actions-footer">
+                            <form method="post" asp-page="/ShoppingCart" asp-page-handler="AddToCart" class="cart-form">
+                                <input type="hidden" name="productId" value="@product.Id" />
+                                <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="btn-action btn-cart" title="Add to Cart">
+                                    <i class="fas fa-shopping-bag"></i> Add to Cart
+                                </button>
+                            </form>
+                            <form method="post" asp-page-handler="AddToWishlist" asp-route-productId="@product.Id" class="wishlist-form">
+                                <input type="hidden" name="id" value="@Model.Category.Id" />
+                                <button type="submit" class="btn-action btn-wishlist" title="Add to Wishlist">
+                                    <i class="fas fa-heart"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            <i class="fas fa-info-circle me-2"></i> Sorry, no products found in the @Model.Category.Name category yet.
+        </div>
+    }
+</div>

@@ -1,0 +1,73 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Seller.NewProductModel
+@{
+    ViewData["Title"] = "Add New Art";
+    Layout = "_Layout";
+}
+
+<div class="dashboard-container">
+
+    <div class="dashboard-content">
+
+        <main class="dashboard-main">
+            <header class="admin-header">
+                <h1>🖼️ Add New Art Listing</h1>
+                <p>Fill in the details for your new artwork to be listed under the 'Art Work' category.</p>
+            </header>
+
+            <section class="content-section-mini form-container">
+                <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+                <form method="post" class="product-form" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Product.Name" class="control-label">Product Name</label>
+                        <input asp-for="Product.Name" class="form-control" />
+                        <span asp-validation-for="Product.Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Product.Price" class="control-label">Price ()</label>
+                        <input asp-for="Product.Price" class="form-control" type="number" step="0.01" />
+                        <span asp-validation-for="Product.Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Product.StockQuantity" class="control-label">Stock Quantity</label>
+                        <input asp-for="Product.StockQuantity" class="form-control" type="number" min="1" />
+                        <span asp-validation-for="Product.StockQuantity" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Product.Description" class="control-label">Description</label>
+                        <textarea asp-for="Product.Description" class="form-control" rows="5"></textarea>
+                        <span asp-validation-for="Product.Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label asp-for="Upload" class="control-label">Product Image</label>
+                        <input type="file" asp-for="Upload" class="form-control" accept="image/*" />
+                        <span asp-validation-for="Upload" class="text-danger"></span>
+                        <div class="form-text text-muted">Accepted formats: JPG, PNG.</div>
+                    </div>
+
+                    <div class="form-actions d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Create Product
+                        </button>
+                        <a asp-page="./MyProducts" class="btn btn-secondary">
+                            <i class="fas fa-list"></i> Back to Listings
+                        </a>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

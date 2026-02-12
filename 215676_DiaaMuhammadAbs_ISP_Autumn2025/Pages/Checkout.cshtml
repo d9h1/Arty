@@ -1,0 +1,85 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.CheckoutModel
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<div class="container my-5 checkout-page-v2">
+
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
+    <header class="admin-header">
+        <h1>📦 Checkout</h1>
+        <p>Please review your order and provide shipping details.</p>
+    </header>
+
+    <div class="common-parent">
+        <div class="flex">
+
+            <div class="order-container">
+                <h4 class="mb-3">Shipping details</h4>
+
+                <form method="post" class="needs-validation" id="checkout-form" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label asp-for="ShippingOrder.CustomerName" class="form-label"></label>
+                            <input asp-for="ShippingOrder.CustomerName" class="form-control" />
+                            <span asp-validation-for="ShippingOrder.CustomerName" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label asp-for="ShippingOrder.CustomerPhone" class="form-label"></label>
+                            <input asp-for="ShippingOrder.CustomerPhone" class="form-control" />
+                            <span asp-validation-for="ShippingOrder.CustomerPhone" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-12">
+                            <label asp-for="ShippingOrder.ShippingAddress" class="form-label"></label>
+                            <textarea asp-for="ShippingOrder.ShippingAddress" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="ShippingOrder.ShippingAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="payment-container">
+
+                
+                <div class="order-summary">
+
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <div class="subtotal">
+                            <span class="sub">
+                                @item.ProductName <span>(Qty: @item.Quantity)</span>
+                            </span>
+                            <div class="sub-price">@item.Total.ToString("N2") </div>
+                        </div>
+                    }
+
+                    <hr aria-hidden="true" class="divide">
+
+                    <div class="subtotal">
+                        <span class="estimated">Estimated total</span>
+                        <span class="total">@Model.CartTotal.ToString("N2") </span>
+                    </div>
+                </div>
+                <div class="p-order">
+                    <button form="checkout-form" class="btn" type="submit">
+                        <i class="fas fa-check-circle"></i> Place Order
+                    </button>
+                    <span class="privacy">
+                        By placing this order, you agree to our Privacy Policy.
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

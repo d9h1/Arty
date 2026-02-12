@@ -1,0 +1,349 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\215676_DiaaMuhammadAbs_ISP_Autumn2025.bundle.scp.css",
+      "PackagePath": "staticwebassets\\215676_DiaaMuhammadAbs_ISP_Autumn2025.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\Pic\\Sld_pic1.png",
+      "PackagePath": "staticwebassets\\Pic\\Sld_pic1.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\Pic\\Sld_pic2.png",
+      "PackagePath": "staticwebassets\\Pic\\Sld_pic2.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\Pic\\Sld_pic3.png",
+      "PackagePath": "staticwebassets\\Pic\\Sld_pic3.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\Pic\\icon.png",
+      "PackagePath": "staticwebassets\\Pic\\icon.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\css\\stylesheet.css",
+      "PackagePath": "staticwebassets\\css\\stylesheet.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\00bb45f5-6b0d-4977-8830-298e31b3fb3c_e5a40741-5f36-4d00-b5f5-8105087be437_71W0KCSQMuL._AC_SX300_SY300_QL70_ML2_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\00bb45f5-6b0d-4977-8830-298e31b3fb3c_e5a40741-5f36-4d00-b5f5-8105087be437_71W0KCSQMuL._AC_SX300_SY300_QL70_ML2_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\03c620cb-c712-438f-a115-8bdd4fcf1a71_Color.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\03c620cb-c712-438f-a115-8bdd4fcf1a71_Color.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\41763b04-c3e4-412b-9d76-91444f67533e_Screenshot 2025-11-16 062517.png",
+      "PackagePath": "staticwebassets\\images\\products\\41763b04-c3e4-412b-9d76-91444f67533e_Screenshot 2025-11-16 062517.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\4cea055c-4686-4871-be20-0d027e3b36ce_8a4587b9-4ecc-4e88-a40b-359d285c2c7c_51A2TT9G+UL._SY445_SX342_ML2_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\4cea055c-4686-4871-be20-0d027e3b36ce_8a4587b9-4ecc-4e88-a40b-359d285c2c7c_51A2TT9G+UL._SY445_SX342_ML2_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\54fb64fb-50bb-4326-b29e-85655f58999b_Screenshot 2025-11-14 162226.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\54fb64fb-50bb-4326-b29e-85655f58999b_Screenshot 2025-11-14 162226.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\55167cfa-1d32-4f4c-ac41-4688763af6b8_988e907e-2fb9-4409-9230-58aaa2e9c78a_81l4oGwPGFL._AC_SX679_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\55167cfa-1d32-4f4c-ac41-4688763af6b8_988e907e-2fb9-4409-9230-58aaa2e9c78a_81l4oGwPGFL._AC_SX679_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\83d9af5c-9fe2-4519-a710-6095e7129bb5_b3fef7a7-e2ec-42b5-9820-3b48b10ad482_71IDbdJryNS._AC_SX679_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\83d9af5c-9fe2-4519-a710-6095e7129bb5_b3fef7a7-e2ec-42b5-9820-3b48b10ad482_71IDbdJryNS._AC_SX679_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\8d204f42-dd33-419e-baff-a71176f332e9_WhatsApp Image 2025-11-11 at 4.19.40 PM.jpeg",
+      "PackagePath": "staticwebassets\\images\\products\\8d204f42-dd33-419e-baff-a71176f332e9_WhatsApp Image 2025-11-11 at 4.19.40 PM.jpeg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\8d62a1ae-ff19-4695-af7f-e3556f0b19aa_Screenshot 2025-11-01 173202.png",
+      "PackagePath": "staticwebassets\\images\\products\\8d62a1ae-ff19-4695-af7f-e3556f0b19aa_Screenshot 2025-11-01 173202.png"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\935e7f8f-dddb-4deb-b9f5-c964223b5152_2cc8338a-f2ac-4a0f-80e0-071dc0033787_Pencil.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\935e7f8f-dddb-4deb-b9f5-c964223b5152_2cc8338a-f2ac-4a0f-80e0-071dc0033787_Pencil.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\a636efa2-1ab5-4e58-a360-f485ed79dfcb_54e625c4-1e78-4421-a7df-62caeb2c795a_71RZ1at8eAL._AC_SX522_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\a636efa2-1ab5-4e58-a360-f485ed79dfcb_54e625c4-1e78-4421-a7df-62caeb2c795a_71RZ1at8eAL._AC_SX522_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\c591726d-4f05-4f1f-ac42-aeb7e779e29b_6c5f7e08-73f0-472b-9336-83a57ba75470_71BBO4GZq7L._AC_SY300_SX300_QL70_ML2_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\c591726d-4f05-4f1f-ac42-aeb7e779e29b_6c5f7e08-73f0-472b-9336-83a57ba75470_71BBO4GZq7L._AC_SY300_SX300_QL70_ML2_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\d2fe7ba1-a973-4b45-b171-8d91f2e5dbb2_09e1ef5d-f532-4dc1-b2af-c38d43010151_71UvkCZlz1L._AC_SX679_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\d2fe7ba1-a973-4b45-b171-8d91f2e5dbb2_09e1ef5d-f532-4dc1-b2af-c38d43010151_71UvkCZlz1L._AC_SX679_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\d730e911-cfea-4556-9258-801ff619ec3d_d7fb82db-0cc3-4660-936d-a1d5edb4f4bc_71Ll2tcHWUL._AC_SX679_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\d730e911-cfea-4556-9258-801ff619ec3d_d7fb82db-0cc3-4660-936d-a1d5edb4f4bc_71Ll2tcHWUL._AC_SX679_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\f31ca047-75a8-4bf6-a25b-e88aaed1e94f_dd672c60-a8bc-4170-8820-45d0ee176e09_71LjJ+VxNoL._AC_SX522_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\f31ca047-75a8-4bf6-a25b-e88aaed1e94f_dd672c60-a8bc-4170-8820-45d0ee176e09_71LjJ+VxNoL._AC_SX522_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\fd706852-bca7-4492-a34a-a3e2a9ec6116_Sketch book1.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\fd706852-bca7-4492-a34a-a3e2a9ec6116_Sketch book1.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\images\\products\\febabfe7-57ff-4d98-9cbc-6b06ae0e1062_f0acd7dc-fbdd-4ba7-8d7f-3d2c3e13a960_61sEDYNZt5L._AC_SY300_SX300_QL70_ML2_.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\febabfe7-57ff-4d98-9cbc-6b06ae0e1062_f0acd7dc-fbdd-4ba7-8d7f-3d2c3e13a960_61sEDYNZt5L._AC_SY300_SX300_QL70_ML2_.jpg"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\215676_DiaaMuhammadAbs_ISP_Autumn2025\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.215676_DiaaMuhammadAbs_ISP_Autumn2025.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.215676_DiaaMuhammadAbs_ISP_Autumn2025.props",
+      "PackagePath": "build\\215676_DiaaMuhammadAbs_ISP_Autumn2025.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.215676_DiaaMuhammadAbs_ISP_Autumn2025.props",
+      "PackagePath": "buildMultiTargeting\\215676_DiaaMuhammadAbs_ISP_Autumn2025.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.215676_DiaaMuhammadAbs_ISP_Autumn2025.props",
+      "PackagePath": "buildTransitive\\215676_DiaaMuhammadAbs_ISP_Autumn2025.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

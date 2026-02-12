@@ -1,0 +1,133 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Cart.ShoppingCartModel
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<div class="container my-5 cart-page-container">
+    <h1 class="mb-4">🛒 Your Shopping Cart</h1>
+
+    @if (Model.CartItems.Any())
+    {
+        <div class="cart">
+
+            <div class="products">
+                @foreach (var item in Model.CartItems)
+                {
+                    <div class="product" id="product-@item.ProductId">
+
+                        @{
+                            string imagePath = item.ImageUrl;
+                            if (!string.IsNullOrEmpty(imagePath))
+                            {
+                                if (!imagePath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    if (!imagePath.StartsWith("/") && !imagePath.StartsWith("~"))
+                                    {
+                                        imagePath = "~/images/products/" + imagePath;
+                                    }
+                                    imagePath = Url.Content(imagePath);
+                                }
+                            }
+                            else
+                            {
+                                imagePath = Url.Content("~/images/default-product.png");
+                            }
+                        }
+                        <img src="@imagePath" alt="@item.ProductName">
+                        <div class="product-info">
+                            <h3 class="product-name">@item.ProductName</h3>
+                            <h4 class="product-price">@item.Price.ToString("C")</h4>
+
+                            <form method="post" asp-page-handler="UpdateQuantity" class="product-quantity-form d-flex align-items-center mb-3">
+                                <input type="hidden" name="productId" value="@item.ProductId" />
+                                <h5>Quantity:</h5>
+                                <div class="add flex1 ms-2">
+                                    <span class="decrease-btn" data-product-id="@item.ProductId">-</span>
+                                    <input type="number"
+                                           name="quantity"
+                                           value="@item.Quantity"
+                                           min="1" max="99"
+                                           class="quantity-input"
+                                           readonly
+                                           data-product-id="@item.ProductId" />
+                                    <span class="increase-btn" data-product-id="@item.ProductId">+</span>
+                                </div>
+                                <button type="submit" class="d-none update-btn" data-product-id="@item.ProductId"></button>
+                            </form>
+
+                            <form method="post" asp-page-handler="Remove" class="product-remove-form">
+                                <input type="hidden" name="productId" value="@item.ProductId" />
+                                <button type="submit" class="product-remove">
+                                    <i class="fas fa-trash"></i> <span class="remove">Remove</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <div class="cart-total">
+                <h4 class="mb-3">Cart Summary</h4>
+                <p>
+                    <span>Total Price</span>
+                    <span>@Model.CartTotal.ToString("C")</span>
+                </p>
+                <p>
+                    <span>Number of Items</span>
+                    <span>@Model.CartItems.Count</span>
+                </p>
+                <a asp-page="/Checkout" class="btn btn-primary w-100">Proceed to Checkout</a>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            Your cart is empty. <a href="/">Start Shopping</a>.
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantityContainers = document.querySelectorAll('.add.flex1');
+
+            quantityContainers.forEach(container => {
+                const decreaseBtn = container.querySelector('.decrease-btn');
+                const increaseBtn = container.querySelector('.increase-btn');
+                const quantityInput = container.querySelector('.quantity-input');
+                const productId = quantityInput.getAttribute('data-product-id');
+                const updateBtn = document.querySelector(`.update-btn[data-product-id="${productId}"]`);
+                const form = document.querySelector(`.product-quantity-form input[value="${productId}"]`).closest('form');
+
+                if (decreaseBtn && increaseBtn && quantityInput && form) {
+
+                    const updateAndSubmit = (newQuantity) => {
+                        const min = parseInt(quantityInput.getAttribute('min')) || 1;
+                        const max = parseInt(quantityInput.getAttribute('max')) || 99;
+
+                        if (newQuantity >= min && newQuantity <= max) {
+                            quantityInput.value = newQuantity;
+                            form.submit();
+                        }
+                    };
+
+                    decreaseBtn.addEventListener('click', () => {
+                        let currentVal = parseInt(quantityInput.value);
+                        if (currentVal > 1) {
+                            updateAndSubmit(currentVal - 1);
+                        }
+                    });
+
+                    increaseBtn.addEventListener('click', () => {
+                        let currentVal = parseInt(quantityInput.value);
+                        updateAndSubmit(currentVal + 1);
+                    });
+                }
+            });
+        });
+    </script>
+}

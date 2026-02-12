@@ -1,0 +1,53 @@
+﻿@page
+@model AdminDashboardModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Admin Control Panel</h1>
+        <p>Welcome, @User.Identity.Name. Manage users, products, and Categories.</p>
+    </div>
+
+    <div class="dashboard-content">
+        <aside class="dashboard-sidebar">
+            <a asp-page="/Admin/Dashboard" class="sidebar-link active">
+                <i class="fas fa-chart-line"></i> Dashboard Home
+            </a>
+            <a asp-page="/Admin/ManageProducts" class="sidebar-link">
+                <i class="fas fa-box-open"></i> Manage Products
+            </a>
+            <a asp-page="/Admin/ManageCategories" class="sidebar-link">
+                <i class="fas fa-box"></i> Manage Categories 
+            </a>
+            <a asp-page="/Admin/ManageUsers" class="sidebar-link">
+                <i class="fas fa-users"></i> Manage Users & Roles
+            </a>
+            <a asp-page="/Admin/ManageOrders" class="sidebar-link">
+                <i class="fas fa-receipt"></i> View All Orders
+            </a>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="stat-cards-grid">
+
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p class="stat-value">@Model.TotalSales.ToString("N2") $</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Registered Sellers</h3>
+                    <p class="stat-value">@Model.TotalSellers</p>
+                    <span class="stat-info">🆕 New sellers data will be added</span>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Orders</h3>
+                    <p class="stat-value">@Model.PendingOrdersCount</p>
+                    <span class="stat-info">📦 Requires attention</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

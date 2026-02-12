@@ -1,0 +1,74 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Admin.ManageUsersModel
+@{
+    ViewData["Title"] = "Manage Users & Roles";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-content admin-content">
+
+        <aside class="dashboard-sidebar admin-sidebar">
+            <a asp-page="/Admin/Dashboard" class="sidebar-link">Dashboard</a>
+            <a asp-page="/Admin/ManageUsers" class="sidebar-link active">Manage Users</a>
+            <a asp-page="/Admin/ManageProducts" class="sidebar-link">Manage Products</a>
+            <a asp-page="/Admin/ManageCategories" class="sidebar-link">Manage Categories</a>
+            <a asp-page="/Admin/ManageOrders" class="sidebar-link">Manage Orders</a>
+        </aside>
+
+        <main class="dashboard-main admin-main">
+            <header class="admin-header">
+                <h1>👥 Manage Users & Roles</h1>
+                <p>View and manage all registered users and assign/update their roles (Admin, Seller, Customer).</p>
+            </header>
+
+            <div class="table-responsive content-section-mini">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Current Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model.Users)
+                        {
+                            <tr>
+                                <td>@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td>
+                                    <span class="role-badge role-@user.CurrentRole.ToLower()">
+                                        @user.CurrentRole
+                                    </span>
+                                </td>
+                                <td>
+                                    <form method="post" asp-page-handler="ChangeRole" class="d-flex align-items-center">
+                                        <input type="hidden" name="userId" value="@user.Id" />
+
+                                        <select name="newRole" class="form-control form-control-sm me-2" style="width: 150px;">
+                                            <option value="">-- Change Role --</option>
+                                            @foreach (var role in user.AvailableRoles)
+                                            {
+                                                <option value="@role" selected="@(user.CurrentRole == role)">
+                                                    @role
+                                                </option>
+                                            }
+                                        </select>
+
+                                        <button type="submit" class="btn btn-sm btn-action save-btn" title="Update Role">
+                                            <i class="fas fa-save"></i> Save
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+}

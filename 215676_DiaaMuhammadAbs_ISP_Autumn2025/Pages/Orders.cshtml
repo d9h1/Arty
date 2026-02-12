@@ -1,0 +1,45 @@
+﻿@page
+@model OrdersModel
+@{
+    ViewData["Title"] = "My Orders";
+}
+
+<div class="my-orders-content">
+    <h1>My Orders History</h1>
+    <hr />
+
+    @if (Model.UserOrders == null || !Model.UserOrders.Any())
+    {
+        <div class="alert alert-info" role="alert">
+            You have not placed any orders yet.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Order #</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model.UserOrders)
+                {
+                    <tr>
+                        <td>@order.Id</td>
+                        <td>@order.OrderDate.ToShortDateString()</td>
+                        <td><span class="badge bg-primary">@order.Status</span></td>
+                        <td>@order.TotalAmount.ToString("C")</td>
+                        <td>
+                            <a asp-page="./OrderDetails" asp-route-id="@order.Id" class="btn btn-sm btn-outline-info">View Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div> 

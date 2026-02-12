@@ -1,0 +1,112 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Seller.MyOrdersModel
+@{
+    ViewData["Title"] = "Customer Orders";
+    Layout = "_Layout";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header seller-header">
+        <h1>Customer Orders</h1>
+        <p>Manage and fulfill orders for your products.</p>
+    </div>
+
+    <div class="dashboard-content">
+        <aside class="dashboard-sidebar seller-sidebar">
+            <a asp-page="/Seller/Dashboard" class="sidebar-link">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a asp-page="/Seller/MyProducts" class="sidebar-link">
+                <i class="fas fa-paint-brush"></i> My Art Listings
+            </a>
+            <a asp-page="/Seller/NewProduct" class="sidebar-link">
+                <i class="fas fa-plus-circle"></i> Add New Art
+            </a>
+            <a asp-page="/Seller/MyOrders" class="sidebar-link active">
+                <i class="fas fa-shopping-basket"></i> Customer Orders
+            </a>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="content-section">
+
+                <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+                @if (Model.SellerOrders.Any())
+                {
+                    <div class="order-list-container">
+                        @foreach (var order in Model.SellerOrders)
+                        {
+                            <div class="order-card content-section-mini mb-4">
+                                <div class="order-card-header">
+                                    <div>
+                                        <h4>Order #@order.Id</h4>
+                                        <span class="text-muted">Placed on: @order.OrderDate.ToString("dd MMM yyyy")</span>
+                                    </div>
+                                    <div>
+                                        <span class="badge @(order.Status == "Pending" ? "bg-warning text-dark" : "bg-success text-white")">
+                                            @order.Status
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h5>Customer Details:</h5>
+                                        <p>
+                                            <strong>Name:</strong> @order.CustomerName<br />
+                                            <strong>Phone:</strong> @order.CustomerPhone<br />
+                                            <strong>Address:</strong> @order.ShippingAddress
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5>Your Items in this Order:</h5>
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (var item in order.OrderItems.Where(oi => oi.Product.SellerId == Model.CurrentSellerId))
+                                            {
+                                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                    <span>
+                                                        @item.Product.Name
+                                                        <small class="d-block text-muted">@item.Quantity x @item.UnitPrice.ToString("C2")</small>
+                                                    </span>
+                                                    <span class="fw-bold">@((item.Quantity * item.UnitPrice).ToString("C2"))</span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <hr />
+
+                                <div class="order-actions">
+                                    <form method="post" asp-page-handler="UpdateStatus" class="d-flex gap-2">
+                                        <input type="hidden" name="orderId" value="@order.Id" />
+
+                                        <select name="status" class="form-select form-select-sm" style="max-width: 150px;">
+                                            <option value="Pending" selected="@(order.Status == "Pending")">Pending</option>
+                                            <option value="Processing" selected="@(order.Status == "Processing")">Processing</option>
+                                            <option value="Shipped" selected="@(order.Status == "Shipped")">Shipped</option>
+                                            <option value="Delivered" selected="@(order.Status == "Delivered")">Delivered</option>
+                                        </select>
+
+                                        <button type="submit" class="btn btn-primary btn-sm">Update Status</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info text-center" role="alert">
+                        <i class="fas fa-info-circle me-2"></i> You have no customer orders yet.
+                    </div>
+                }
+
+            </div>
+        </main>
+    </div>
+</div>

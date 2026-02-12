@@ -1,0 +1,94 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Admin.ManageOrdersModel
+@{
+    ViewData["Title"] = "Manage Orders";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-content admin-content">
+
+        <aside class="dashboard-sidebar admin-sidebar">
+            <a asp-page="/Admin/Dashboard" class="sidebar-link">Dashboard</a>
+            <a asp-page="/Admin/ManageUsers" class="sidebar-link">Manage Users</a>
+            <a asp-page="/Admin/ManageProducts" class="sidebar-link">Manage Products</a>
+            <a asp-page="/Admin/ManageCategories" class="sidebar-link">Manage Categories</a>
+            <a asp-page="/Admin/ManageOrders" class="sidebar-link active">Manage Orders</a>
+        </aside>
+
+        <main class="dashboard-main admin-main">
+            <header class="admin-header">
+                <h1>📦 Manage Customer Orders</h1>
+                <p>Overview of all customer orders placed on the platform. Use this page to track and update order status.</p>
+            </header>
+
+            <div class="table-responsive content-section-mini">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Order Date</th>
+                            <th>Total Amount ()</th>
+                            <th>Shipping Address</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Orders != null && Model.Orders.Any())
+                        {
+                            @foreach (var item in Model.Orders)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.User?.UserName</td>
+                                    <td>@item.OrderDate.ToString("dd-MMM-yyyy")</td>
+                                    <td>@item.TotalAmount.ToString("N2")</td>
+                                    <td>@item.ShippingAddress</td>
+                                    <td>
+                                        <span class="status-badge status-@item.Status.ToLower()">
+                                            @item.Status
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form method="post" asp-page-handler="UpdateStatus" class="d-flex align-items-center">
+                                            <input type="hidden" name="id" value="@item.Id" />
+
+                                            <select name="newStatus" class="form-control form-control-sm me-2" style="width: 150px;">
+                                                <option value="">-- Set Status --</option>
+                                                @foreach (var status in Model.AvailableStatuses)
+                                                {
+                                                    <option value="@status" selected="@(item.Status == status)">
+                                                        @status
+                                                    </option>
+                                                }
+                                            </select>
+
+                                            <button type="submit" class="btn btn-sm btn-action edit-btn" title="Update Status">
+                                                <i class="fas fa-sync-alt"></i> Update
+                                            </button>
+
+                                            <a asp-page="./OrderDetails" asp-route-id="@item.Id" class="btn btn-sm btn-info ms-2" title="View Details">
+                                                <i class="fas fa-eye"></i> Details
+                                            </a>
+
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="7" class="text-center">No orders found.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+}

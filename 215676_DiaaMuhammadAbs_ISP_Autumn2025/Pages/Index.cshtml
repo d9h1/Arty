@@ -1,0 +1,122 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.IndexModel
+@{
+    <!-- Slideshow -->
+<div class="slideshow-container">
+    <div class="mySlides fade">
+        <div class="slide-content">
+            <h2>Unleash Your Softest Creations</h2>
+            <p>Explore our exquisite collection of art supplies in the most delicate pastel hues.</p>
+        </div>
+        <img src="Pic/Sld_pic1.png" style="width:50%">
+        <div class="button-container">
+            <a href="#section-title" class="slideshow-btn">Shop Now</a>
+        </div>
+    </div>
+    <div class="mySlides fade">
+        <div class="slide-content">
+            <h2>Find Your Inspiration</h2>
+            <p>High-quality tools for every artist, from beginner to professional.</p>
+        </div>
+        <img src="Pic/Sld_pic2.png" style="width:50%">
+        <div class="button-container">
+            <a href="#section-title" class="slideshow-btn">Shop Now</a>
+        </div>
+    </div>
+    <div class="mySlides fade">
+         <div class="slide-content">
+            <h2>Find Your Inspiration</h2>
+            <p>High-quality tools for every artist, from beginner to professional.</p>
+        </div>
+        <img src="Pic/Sld_pic3.png" style="width:50%">
+        <div class="button-container">
+            <a href="#section-title" class="slideshow-btn">Shop Now</a>
+        </div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+</div>
+
+<hr style="border:1px solid #987070">
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+    <h2 id="section-title" class="section-title">Product Categories</h2>
+    <div class="categories-grid">
+
+        @if (Model.Categories != null && Model.Categories.Any())
+        {
+            @foreach (var category in Model.Categories)
+            {
+                <div class="category-card-container">
+
+                    <a asp-page="CategoryProducts" asp-route-id="@category.Id">
+                        <div class="category-card">
+                            <div class="card-image @(category.UrlSegment == "special-offers" ? "special-offer-image" : "")">
+                                <i class="@category.Icon"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="card-title">@category.Name</div>
+                </div>
+            }
+        }
+        else
+        {
+            <p>Categories are currently unavailable or being loaded.</p>
+        }
+    </div>
+    <hr style="border:1px solid #987070">
+    @using Microsoft.AspNetCore.Identity
+    @inject SignInManager<IdentityUser> SignInManager
+
+    <section id="about-section" class="content-section">
+        <h2>Art work</h2>
+        <p>
+            Arty is not only an art tool shop, we also provide a variety of art work that you can choose from to decorate your home or office. Our art work collection includes paintings, prints, sculptures, and mixed media pieces created by talented local and international artists or even by you. We carefully curate our collection to ensure that we offer a diverse range of styles and mediums to suit every taste and budget. Whether you're looking for a bold statement piece or a subtle accent, our art work collection has something for everyone. Visit us today to explore our collection and find the perfect piece to enhance your space.
+        </p>
+        <div class="button">
+            <a asp-page="/Products/Index" class="slideshow-btn">Shop Now</a>
+
+            @if (!SignInManager.IsSignedIn(User))
+            {
+                <a asp-area="Identity" asp-page="/Account/Register" class="slideshow-btn">Sell art work</a>
+            }
+            else if (User.IsInRole("Customer"))
+            {
+                <a asp-area="Identity" asp-page="/Account/Register" class="slideshow-btn">Creat a Seller account</a>
+            }
+            else
+            {
+                <a href="/Dashboard" class="slideshow-btn">Manage My Art</a>
+            }
+
+        </div>
+    </section>
+}

@@ -1,0 +1,57 @@
+﻿@page
+@model CustomerDashboardModel
+@{
+    ViewData["Title"] = "My Account";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header customer-header">
+        <h1>Welcome Back, @User.Identity.Name!</h1>
+        <p>Here is a summary of your activities.</p>
+    </div>
+
+    <div class="dashboard-content">
+        <aside class="dashboard-sidebar customer-sidebar">
+            <a asp-page="/Customer/Dashboard" class="sidebar-link active">
+                <i class="fas fa-user-circle"></i> Account Summary
+            </a>
+            <a asp-page="/Orders" class="sidebar-link">
+                <i class="fas fa-box"></i> My Orders
+            </a>
+            <a asp-page="/Wishlist" class="sidebar-link">
+                <i class="fas fa-heart"></i> My Wishlist
+            </a>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="recent-orders-section content-section-mini">
+                <h2>Recently Placed Orders</h2>
+                @if (Model.LastOrderNumber != "N/A")
+                {
+                    <p>Your last order: Order @Model.LastOrderNumber, placed on @Model.LastOrderDate.</p>
+                }
+                else
+                {
+                    <p>You have not placed any orders yet. <a href="~/">Start Shopping!</a></p>
+                }
+                <a href="~/Orders" class="slideshow-btn" style="padding: 10px 20px; font-size: 0.9rem;">View All Orders</a>
+            </div>
+
+            <div class="recommendations-section content-section-mini">
+                <h2>Recommended For You</h2>
+                <div class="recommendations-grid">
+                    @foreach (var product in Model.RecommendedProducts)
+                    {
+                        <div class="recommendation-item">
+                            <a asp-page="/Products/Details" asp-route-id="@product.Id">
+
+                                <p>@product.Name</p>
+                                <span class="price">@product.Price.ToString("N2") $</span>
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

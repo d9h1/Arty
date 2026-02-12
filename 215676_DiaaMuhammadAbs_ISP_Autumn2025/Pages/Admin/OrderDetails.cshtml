@@ -1,0 +1,119 @@
+﻿@page "{id:int}"
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Admin.OrderDetailsModel
+@{
+    ViewData["Title"] = "Order Details - " + Model.Order?.Id;
+    var availableStatuses = new List<string> { "Pending", "Processing", "Shipped", "Delivered" };
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-content admin-content">
+
+        <aside class="dashboard-sidebar admin-sidebar">
+            <a asp-page="/Admin/Dashboard" class="sidebar-link">Dashboard</a>
+            <a asp-page="/Admin/ManageUsers" class="sidebar-link">Manage Users</a>
+            <a asp-page="/Admin/ManageProducts" class="sidebar-link">Manage Products</a>
+            <a asp-page="/Admin/ManageOrders" class="sidebar-link active">Manage Orders</a>
+        </aside>
+
+        <main class="dashboard-main admin-main">
+            <header class="admin-header">
+                <h1>🧾 Order Details #@Model.Order.Id</h1>
+                <p>Detailed information for the order placed by **@Model.Order.User?.UserName**.</p>
+                <a asp-page="/Admin/ManageOrders" class="btn btn-sm btn-secondary ms-auto">
+                    <i class="fas fa-arrow-left"></i> Back to All Orders
+                </a>
+            </header>
+
+            <div class="content-section-mini">
+                <h2 class="section-title">Order Summary</h2>
+                <div class="row details-card-grid">
+                    <div class="col-md-6">
+                        <div class="card detail-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Customer & Date</h5>
+                                <p><strong>Customer:</strong> @Model.Order.User?.UserName (@Model.Order.User?.Email)</p>
+                                <p><strong>Order Date:</strong> @Model.Order.OrderDate.ToString("dd MMMM yyyy, hh:mm tt")</p>
+                                <p><strong>Shipping Address:</strong> @Model.Order.ShippingAddress</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card detail-card status-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Status & Total</h5>
+                                <p><strong>Total Amount:</strong> <span class="text-success fw-bold">@Model.Order.TotalAmount.ToString("N2") </span></p>
+                                <p>
+                                    <strong>Current Status:</strong>
+                                    <span class="status-badge status-@Model.Order.Status.ToLower()">
+                                        @Model.Order.Status
+                                    </span>
+                                </p>
+
+                                <form method="post" asp-page-handler="UpdateStatus" class="d-flex mt-3">
+                                    <input type="hidden" name="orderId" value="@Model.Order.Id" />
+                                    <select name="newStatus" class="form-control form-control-sm me-2">
+                                        @foreach (var status in availableStatuses)
+                                        {
+                                            <option value="@status" selected="@(Model.Order.Status == status)">
+                                                @status
+                                            </option>
+                                        }
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-action edit-btn">
+                                        Update Status
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section-mini mt-4">
+                <h2 class="section-title">Order Items</h2>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Unit Price ()</th>
+                                <th>Subtotal ()</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.Order.OrderItems != null && Model.Order.OrderItems.Any())
+                            {
+                                @foreach (var item in Model.Order.OrderItems)
+                                {
+                                    <tr>
+                                        <td>@item.Product?.Name</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.UnitPrice.ToString("N2")</td>
+                                        <td>@((item.Quantity * item.UnitPrice).ToString("N2"))</td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">No items found for this order.</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="text-end fw-bold">GRAND TOTAL:</td>
+                                <td class="fw-bold">@Model.Order.TotalAmount.ToString("N2") </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+@section Scripts {
+}

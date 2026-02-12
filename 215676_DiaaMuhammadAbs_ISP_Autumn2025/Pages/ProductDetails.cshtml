@@ -1,0 +1,119 @@
+﻿@page "{id:int}"
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Products.ProductDetailsModel
+
+@{
+    ViewData["Title"] = Model.Product?.Name ?? "Product Details";
+}
+
+<section>
+    <div class="container flex product-card-v3">
+        @if (Model.Product != null)
+        {
+            <div class="left">
+                <div class="main_image">
+
+                    @{
+                        string imagePath = Model.Product.ImageUrl;
+                        if (!string.IsNullOrEmpty(imagePath))
+                        {
+                            if (!imagePath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                            {
+                                if (!imagePath.StartsWith("/") && !imagePath.StartsWith("~"))
+                                {
+                                    imagePath = "~/images/products/" + imagePath;
+                                }
+                                imagePath = Url.Content(imagePath);
+                            }
+                        }
+                        else
+                        {
+                            imagePath = Url.Content("~/images/default-product.png");
+                        }
+                    }
+                    <img src="@imagePath"
+                         alt="@Model.Product.Name"
+                         class="slide main-product-image" />
+                </div>
+            </div>
+
+            <div class="right">
+                <h3>@Model.Product.Name</h3>
+
+                <h4>
+                    @Model.Product.Price.ToString("N2")<small></small>
+                </h4>
+
+                <p>@Model.Product.Description</p>
+
+                <h5 class="category-link">
+                    Category:
+                    <a asp-page="CategoryProducts" asp-route-id="@Model.Product.CategoryId">
+                        @(Model.Product.Category?.Name ?? "Uncategorized")
+                    </a>
+                </h5>
+
+                <form method="post"
+                      asp-page="/ShoppingCart"
+                      asp-page-handler="AddToCart"
+                      class="quantity-form">
+
+                    <input type="hidden" name="productId" value="@Model.Product.Id" />
+
+                    <h5>Quantity</h5>
+                    <div class="add flex1">
+                        <span id="decrease">-</span>
+                        <input type="number" name="quantity" value="1" min="1" max="99" class="quantity-input" readonly />
+                        <span id="increase">+</span>
+                    </div>
+
+                    <div class="actions-group">
+                        <button type="submit" class="main-btn">
+                            <i class="fas fa-shopping-bag"></i>  Add to Bag
+                        </button>
+
+                        <button type="submit"
+                                asp-page-handler="AddToWishlist"
+                                asp-route-productId="@Model.Product.Id"
+                                class="wishlist-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="alert-not-found">
+                Sorry, the product is not available.
+            </div>
+        }
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function img(imageSrc) {
+            document.querySelector('.main-product-image').src = imageSrc;
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quantityInput = document.querySelector('.quantity-input');
+            const decreaseBtn = document.getElementById('decrease');
+            const increaseBtn = document.getElementById('increase');
+
+            if (quantityInput && decreaseBtn && increaseBtn) {
+                decreaseBtn.addEventListener('click', () => {
+                    let currentVal = parseInt(quantityInput.value);
+                    if (currentVal > 1) {
+                        quantityInput.value = currentVal - 1;
+                    }
+                });
+
+                increaseBtn.addEventListener('click', () => {
+                    let currentVal = parseInt(quantityInput.value);
+                    quantityInput.value = currentVal + 1;
+                });
+            }
+        });
+    </script>
+}

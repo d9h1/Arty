@@ -1,0 +1,129 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Seller.MyProductsModel
+@{
+    ViewData["Title"] = "My Art Listings";
+    Layout = "_Layout"; 
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-header seller-header">
+        <h1>My Art Listings</h1>
+        <p>View and manage all your listed products.</p>
+    </div>
+
+    <div class="dashboard-content">
+        <aside class="dashboard-sidebar seller-sidebar">
+            <a asp-page="/Seller/Dashboard" class="sidebar-link">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a asp-page="/Seller/MyProducts" class="sidebar-link active">
+                <i class="fas fa-paint-brush"></i> My Art Listings
+            </a>
+            <a asp-page="/Seller/NewProduct" class="sidebar-link">
+                <i class="fas fa-plus-circle"></i> Add New Art
+            </a>
+            <a asp-page="/Seller/MyOrders" class="sidebar-link">
+                <i class="fas fa-shopping-basket"></i> Customer Orders
+            </a>
+        </aside>
+
+        <main class="dashboard-main">
+            <div class="content-section">
+
+                <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h2>Products (@Model.MyProducts.Count)</h2>
+                    <a asp-page="/Seller/NewProduct" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add New Product
+                    </a>
+                </div>
+
+                @if (Model.MyProducts.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover seller-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model.MyProducts)
+                                {
+                                    string imagePath = product.ImageUrl;
+
+                                    if (string.IsNullOrEmpty(imagePath))
+                                    {
+                                        imagePath = "~/images/default-product.png";
+                                    }
+                                    else if (!imagePath.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        if (!imagePath.StartsWith("/") && !imagePath.StartsWith("~"))
+                                        {
+                                            imagePath = "~/images/products/" + imagePath;
+                                        }
+                                    }
+
+                                    imagePath = Url.Content(imagePath);
+
+                                    <tr>
+                                        <td style="width: 80px;">
+                                            <img src="@imagePath"
+                                                 alt="@product.Name"
+                                                 style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;" />
+                                        </td>
+                                        <td>@product.Name</td>
+                                        <td>@(product.Category?.Name ?? "N/A")</td>
+                                        <td>@product.Price.ToString("C2")</td>
+                                        <td>
+                                            @if (product.StockQuantity > 0)
+                                            {
+                                                <span class="badge bg-success">@product.StockQuantity In Stock</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger">Sold Out</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a asp-page="/Seller/EditProduct"
+                                               asp-route-id="@product.Id"
+                                               class="btn btn-action edit-btn"
+                                               title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+
+                                            <form method="post"
+                                                  asp-page-handler="Delete"
+                                                  asp-route-id="@product.Id"
+                                                  onsubmit="return confirm('Are you sure you want to delete this product: @product.Name?');">
+                                                <button type="submit" class="btn btn-action delete-btn" title="Delete">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-info text-center" role="alert">
+                        <i class="fas fa-info-circle me-2"></i> You have no art listings yet.
+                        <a asp-page="/Seller/NewProduct" class="alert-link">Click here to add your first product.</a>
+                    </div>
+                }
+
+            </div>
+        </main>
+    </div>
+</div>

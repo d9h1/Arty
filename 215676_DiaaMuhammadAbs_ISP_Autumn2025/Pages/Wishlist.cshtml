@@ -1,0 +1,56 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.WishlistModel
+@{
+    ViewData["Title"] = "My Wishlist";
+}
+
+<section class="wishlist-container">
+    <h2><i class="fa-regular fa-heart"></i> My Wishlist</h2>
+    <hr />
+
+    <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+    @if (Model.WishlistItems.Any())
+    {
+        <div class="wishlist-grid">
+            @foreach (var item in Model.WishlistItems)
+            {
+                <div class="wishlist-item">
+                    <div class="item-details">
+                        <img src="@item.Product.ImageUrl" alt="@item.Product.Name" class="item-image" />
+                        <div class="item-info">
+                            <h4>
+                                <a asp-page="/ProductDetails" asp-route-id="@item.ProductId">@item.Product.Name</a>
+                            </h4>
+                            <p class="item-price">$@item.Product.Price.ToString("F2")</p>
+                            <p class="item-date">Added on: @item.AddedDate.ToShortDateString()</p>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+
+
+                        <form method="post" asp-page-handler="Remove" asp-route-id="@item.Id">
+                            <button type="submit" class="btn btn-danger btn-sm" title="Remove from Wishlist">
+                                <i class="fa-regular fa-trash-can"></i> Remove
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            Your wishlist is empty. Start adding some products!
+        </div>
+        <hr />
+        <div class="text-center mt-4">
+            <a asp-page="/Index" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    }
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

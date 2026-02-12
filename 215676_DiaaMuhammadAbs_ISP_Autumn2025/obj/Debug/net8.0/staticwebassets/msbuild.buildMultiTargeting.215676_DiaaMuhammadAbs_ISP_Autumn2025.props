@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\215676_DiaaMuhammadAbs_ISP_Autumn2025.props" />
+</Project>

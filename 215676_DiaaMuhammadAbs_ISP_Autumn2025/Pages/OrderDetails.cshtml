@@ -1,0 +1,101 @@
+﻿@page
+@model _215676_DiaaMuhammadAbs_ISP_Autumn2025.Pages.Cart.OrderDetailsModel
+@{
+    ViewData["Title"] = $"Order Details #{Model.OrderDetails?.Id}";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/order-details.css" />
+}
+
+<div class="container my-5 order-details-page">
+    @if (Model.OrderDetails == null)
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            Order not found or you do not have permission to view it.
+        </div>
+    }
+    else
+    {
+        <h1 class="mb-4 text-center primary-theme-color">
+            Order Details: #@Model.OrderDetails.Id
+        </h1>
+        <div class="row mb-5">
+
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 shadow-sm border-primary-theme">
+                    <div class="card-header bg-primary-theme text-white">
+                        <i class="fas fa-info-circle me-2"></i> Order Summary
+                    </div>
+                    <div class="card-body">
+                        <p><strong>Date Placed:</strong> @Model.OrderDetails.OrderDate.ToShortDateString()</p>
+                        <p><strong>Status:</strong> <span class="badge rounded-pill success-theme-bg text-white p-2">@Model.OrderDetails.Status</span></p>
+                        <h4 class="mt-3 secondary-theme-color"><strong>Total Amount:</strong> @Model.OrderDetails.TotalAmount.ToString("C")</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header light-theme-bg dark-theme-color">
+                        <i class="fas fa-shipping-fast me-2"></i> Shipping Details
+                    </div>
+                    <div class="card-body">
+                        <p><strong>@Model.OrderDetails.ShippingAddress.FullName</strong></p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> @Model.OrderDetails.ShippingAddress.ShippingAddress</p>
+                        <p><i class="fas fa-phone me-2"></i> @Model.OrderDetails.ShippingAddress.CustomerPhone</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary-theme text-white">
+                <i class="fas fa-list me-2"></i> Items Ordered
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped mb-0 order-items-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%;"></th>
+                                <th style="width: 45%;">Product</th>
+                                <th style="width: 15%;">Price</th>
+                                <th class="text-center" style="width: 15%;">Quantity</th>
+                                <th class="text-end" style="width: 20%;">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderDetails.Items)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@item.ImageUrl" alt="@item.ProductName" class="product-thumb">
+                                    </td>
+                                    <td>@item.ProductName</td>
+                                    <td>@item.Price.ToString("C")</td>
+                                    <td class="text-center">@item.Quantity</td>
+                                    <td class="text-end">@((item.Price * item.Quantity).ToString("C"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" class="text-end fw-bold fs-5 secondary-theme-color">Order Total:</td>
+                                <td class="text-end fw-bold fs-5 secondary-theme-color">@Model.OrderDetails.TotalAmount.ToString("C")</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a asp-page="./Orders" class="btn btn-lg back-to-orders-btn">
+                <i class="fas fa-arrow-left me-2"></i> Back to Orders History
+            </a>
+        </div>
+    }
+</div>
